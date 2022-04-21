@@ -5,8 +5,8 @@
 #include <Ultrasonic.h>			<-- Biblioteca sensor ultrasonico
 
 //sensor entrada (sensor 1)
-#define pt1 4      <-- pt1 nome usado pra identificar as portas (p= porta/ t=trig / 1 = numero da vaga) e 4 (onde ligará no Arduino)
-#define pe1 5	   <-- pe1 nome usado pra identificar as portas (p= porta/ e=echo / 1 = numero da vaga) e 5 (onde ligará no Arduino)
+#define pt1 4      <-- pt1 nome usado pra identificar as portas (p= porta/ t=trig / 1 = numero da vaga) e 4 (onde ligarÃ¡ no Arduino)
+#define pe1 5	   <-- pe1 nome usado pra identificar as portas (p= porta/ e=echo / 1 = numero da vaga) e 5 (onde ligarÃ¡ no Arduino)
 
 //sensor saida (sensor 2)
 #define pt2 2
@@ -76,7 +76,7 @@ void setup()
   pinMode(ledVermelho, OUTPUT);
 }
 
-//-------------------- Função para decremento das vagas ao sair -----------------------------
+//-------------------- FunÃ§Ã£o para decremento das vagas ao sair -----------------------------
 void Vagas(){
   totalvagas = 4;
      
@@ -84,7 +84,7 @@ void Vagas(){
      
   }
 
-// --------------------- Função para os leds de entrada --------------------------------------
+// --------------------- FunÃ§Ã£o para os leds de entrada --------------------------------------
 void Leds(){
 
   //Controle do led piscando na entrada
@@ -162,9 +162,9 @@ void loop()
   lcd.setCursor(13, 1);
   lcd.print(fluxo);
 
-  Leds(); //função controle dos leds de entrada VERDE e VERMELHO
+  Leds(); //funÃ§Ã£o controle dos leds de entrada VERDE e VERMELHO
   
-  // ---------------- Condição de entrada ABRIR --------------------------------------------
+  // ---------------- CondiÃ§Ã£o de entrada ABRIR --------------------------------------------
   if (cmMsecEntrada < 7.0 && cmMsecEntrada > 0.9 && controle1 == 0 && totalvagas <= 4) {
 
       fluxo++; // contagem de veiculos diario
@@ -196,7 +196,7 @@ void loop()
      }
   }
 
-  //------------------- Condição de entrada FECHAR ---------------------------------------------------
+  //------------------- CondiÃ§Ã£o de entrada FECHAR ---------------------------------------------------
    if (cmMsecEntrada > 12.0 && controle1 == 1) {
     
      //delay(300); //regular tempo de fechamento 
@@ -212,7 +212,7 @@ void loop()
   }
 
 
-  // ------------------- Condição de saida ABRIR -----------------------------------------------------
+  // ------------------- CondiÃ§Ã£o de saida ABRIR -----------------------------------------------------
   if(cmMsecSaida < 12.0 && cmMsecSaida > 0.0 && controle2 == 0){
 
      lcd.clear();
@@ -227,7 +227,7 @@ void loop()
      controle2 = 1 ;
     }
 
-  // -------------------- Condição de saida FECHAR ---------------------------------------------------
+  // -------------------- CondiÃ§Ã£o de saida FECHAR ---------------------------------------------------
    if (cmMsecSaida > 12.0 && controle2 == 1) {
      delay(500); //mudar para 5000, delay tempo de fechamento cancela de saida
      
